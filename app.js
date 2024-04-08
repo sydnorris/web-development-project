@@ -28,7 +28,7 @@ app.post('/submit-form', (req, res) => {
 		errors.email = ['Please enter your message'];
 	}
 
-    es.send(name, email, message);
+    res.send(name, email, message);
 });
 
 app.listen(port, () => {
