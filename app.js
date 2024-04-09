@@ -20,9 +20,9 @@ app.post('/submit-form', (req, res) => {
 		errors.name = ['Please enter your name'];
 	}
 
-    if (!String(data.email).trim()) {
-		errors.email = ['Please enter your email'];
-	}
+    if (!(/^[\-0-9a-zA-Z\.\+_]+@[\-0-9a-zA-Z\.\+_]+\.[a-zA-Z]{2,}$/).test(String(data.email))) {
+		errors.email = ['Email is not valid.'];
+	} 
 
     if (!String(data.message).trim()) {
 		errors.email = ['Please enter your message'];
